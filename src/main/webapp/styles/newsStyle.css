@@ -1,7 +1,8 @@
 /* for base layout */
 html,body {
 	height: 100%;
-	width: 1000px;
+	width: 900px;
+	
 
 }
 
@@ -17,15 +18,18 @@ html,body {
 	min-height: 500px;
 	position: relative;
 	width: 1000px;
+
 }
 
 .header {
 	border: solid 1px black;
-	height: 110px;
+	height: 100px;
 	font-size : 24px;
 	margin-left: -1px; 
 	margin-right: -1px; 
 	margin-top: -1px; 
+	
+	
 }
 
 .menu,.content {

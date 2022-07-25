@@ -27,16 +27,18 @@ public class UserDataValidationImpl implements UserDataValidation{
 		String password = user.getPassword();
 		String confirmPassword = user.getConfirmPassword();
 		String email = user.getEmail();
+		List<String> invalidData = new ArrayList();
 		
 		if (!checkLogin(login)) {
-			invalidRegistrationData.add("invalid login");
+			invalidData.add("invalid login");
 		}
 		if (!checkPassword(password, confirmPassword)) {
-			invalidRegistrationData.add("invalid password");
+			invalidData.add("invalid password");
 		}
 		if (!checkEmail(email)) {
-			invalidRegistrationData.add("invalid email");
+			invalidData.add("invalid email");
 		}
+		invalidRegistrationData = invalidData;
 		
 		return checkLogin(login) && checkPassword(password, confirmPassword) && checkEmail(email);
 	}

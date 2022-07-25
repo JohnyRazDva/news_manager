@@ -34,14 +34,18 @@
    			<input type="text" name="password_confirm" placeholder="Enter your password one more time">
    			<p>Email</p>
    			<input type="email" name="email" placeholder="Enter your email"><br><br>
-   
+   			
+   			<c:if test="${not (requestScope.invalidRegistrationData eq null)}">
+				<c:forEach var="registrationData" items="${requestScope.invalidRegistrationData}">
+					<font color="red">
+						<c:out value="${registrationData}"/><br>
+					</font>
+				</c:forEach>
+			</c:if>
+   			<br>
   			<input type="submit" value="Register">
 		</form>
 	</div>
-	<c:if test="${not (requestScope.invalidRegistrationData eq null)}">
-		<c:forEach var="registrationData" items="${requestScope.invalidRegistrationData}">
-			<c:out value="${registrationData}" />
-		</c:forEach>
-	</c:if>
+
 </body>
 </html> 
