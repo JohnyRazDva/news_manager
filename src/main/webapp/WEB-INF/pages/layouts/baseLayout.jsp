@@ -12,7 +12,11 @@
 <title>locale.linkname.headertitle <!-- <bean:message key="locale.linkname.headertitle" />
  -->
 </title>
-
+<style>
+ html {
+ background-image: url(images/back.webp);
+ }
+</style>
 
 <link rel="stylesheet" type="text/css" href="styles/newsStyle.css">
 
@@ -27,8 +31,8 @@
 			<div class="menu">
 
 				<c:if test="${not (sessionScope.user eq 'active')}">
-				    Welcome!!!!!
-					<%-- <c:import url=""></c:import> --%>
+				    
+					
 				</c:if>
 				<c:if test="${sessionScope.user eq 'active'}">
 					<c:import url="/WEB-INF/pages/tiles/menu.jsp" />

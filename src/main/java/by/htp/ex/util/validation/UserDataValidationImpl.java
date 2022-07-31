@@ -10,7 +10,7 @@ import by.htp.ex.bean.User;
 
 public class UserDataValidationImpl implements UserDataValidation{
 	private final static String LOGIN_PATTERN = "^[a-zA-Z][\\w]{6,14}";
-	private final static String PASSWORD_PATTERN = "^[\\w]{6,14}";
+	private final static String PASSWORD_PATTERN = "[\\w]{6,14}";
 	private final static String EMAIL_PATTERN = "^(.+)@(.+)$";
 	private List<String>  invalidRegistrationData = new ArrayList();
 

@@ -1,7 +1,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<style>
+.newstitle{
+font-size: 24px;
+font-style: oblique;
+}
+</style>
 <div class="wrapper">
-	<div class="newstitle">News management</div>
+	<div class="newstitle">
+	<font color="black">
+	IT Academy. MD-JD2-87-22 News 
+	</font>
+	</div>
 
 
 	<div class="local-link">

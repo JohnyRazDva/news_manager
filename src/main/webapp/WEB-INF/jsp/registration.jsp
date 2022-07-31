@@ -31,7 +31,7 @@
    			<p>Password</p>
    			<input type="text" name="password" placeholder="Enter your password">
    			<p>Confirm password</p>
-   			<input type="text" name="password_confirm" placeholder="Enter your password one more time">
+   			<input type="text" name="confirm_password" placeholder="Enter your password one more time">
    			<p>Email</p>
    			<input type="email" name="email" placeholder="Enter your email"><br><br>
    			

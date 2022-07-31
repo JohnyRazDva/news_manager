@@ -5,6 +5,7 @@ private String login;
 private String password;
 private String confirmPassword;
 private String email;
+private UserAccess access = UserAccess.USER;
 
 public User() {}
 
@@ -13,7 +14,6 @@ public User(String login, String password, String confirm_password, String email
 	this.password = password;
 	this.confirmPassword = confirm_password;
 	this.email = email;
-	
 }
 
 public String getLogin() {
@@ -36,6 +36,10 @@ public String getConfirmPassword() {
 
 public String getEmail() {
 	return email;
+}
+
+public String getAccess() {
+	return access.toString();
 }
 
 
