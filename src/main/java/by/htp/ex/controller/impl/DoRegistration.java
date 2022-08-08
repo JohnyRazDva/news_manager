@@ -33,10 +33,8 @@ public class DoRegistration implements Command {
 				request.setAttribute("invalidRegistrationData", invalidRegistrationData);
 
 			}
-
 			request.setAttribute("registration_status", true);
-			response.sendRedirect("controller?command=go_to_base_page");
-
+			request.getRequestDispatcher("/WEB-INF/pages/layouts/baseLayout.jsp").forward(request, response);
 		} catch (ServiceException e) {
 			// do something
 		}
