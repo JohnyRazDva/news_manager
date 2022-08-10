@@ -25,12 +25,12 @@ public class UserDAO implements IUserDAO {
 
 			String accessLevel = resultSet.getString("access");
 
-			return accessLevel.equalsIgnoreCase("admin");
+			return accessLevel.equalsIgnoreCase("admin") || accessLevel.equalsIgnoreCase("user");
 
 		} catch (SQLException e) {
-			return false;
+			throw new DaoException(e);
 		} catch (ConnectionPoolException e1) {
-			return false;
+			throw new DaoException(e1);
 		}
 
 	}
@@ -51,9 +51,9 @@ public class UserDAO implements IUserDAO {
 			return stmt.execute();
 
 		} catch (SQLException e) {
-			return false;
+			throw new DaoException(e);
 		} catch (ConnectionPoolException e1) {
-			return false;
+			throw new DaoException(e1);
 		}
 	}
 

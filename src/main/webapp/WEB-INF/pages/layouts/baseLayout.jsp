@@ -45,8 +45,11 @@
 					<c:if test="${ (sessionScope.registration_status eq null)}">
 					<c:import url="/WEB-INF/pages/tiles/guestInfo.jsp" />
 					</c:if>
-				<c:if test="${not (sessionScope.registration_status eq null)}">
+				<c:if test="${ (sessionScope.registration_status eq true)}">
 					<c:import url="/WEB-INF/jsp/registration.jsp" />
+				</c:if>
+				<c:if test="${ (sessionScope.registration_status eq 'success')}">
+					<c:import url="/WEB-INF/jsp/registrationSuccess.jsp" />
 				</c:if>
 				</c:if>
 				<c:if test="${sessionScope.user eq 'active'}">

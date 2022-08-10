@@ -28,11 +28,11 @@ public class DoSIgnIn implements Command {
 
 		login = request.getParameter(JSP_LOGIN_PARAM);
 		password = request.getParameter(JSP_PASSWORD_PARAM);
-
-		// small validation
+		List<News> latestNews = null;
 
 		try {
 
+			latestNews = newsService.latestList(5);
 			String role = service.signIn(login, password);
 
 			if (!role.equals("guest")) {
@@ -42,19 +42,17 @@ public class DoSIgnIn implements Command {
 			} else {
 				request.getSession(true).setAttribute("user", "not active");
 				request.setAttribute("AuthenticationError", "wrong login or password");
-				List<News> latestNews;
-				latestNews = newsService.latestList(5);
 				request.setAttribute("news", latestNews);
 				request.getRequestDispatcher("/WEB-INF/pages/layouts/baseLayout.jsp").forward(request, response);
 			}
 
 		} catch (ServiceException e) {
-			// logging e
-			// go-to error page
+			request.getSession(true).setAttribute("user", "not active");
+			request.setAttribute("AuthenticationError", "wrong login or password");
+			request.setAttribute("news", latestNews);
+			request.getRequestDispatcher("/WEB-INF/pages/layouts/baseLayout.jsp").forward(request, response);
 
 		}
-
-		// response.getWriter().print("do logination");
 
 	}
 
