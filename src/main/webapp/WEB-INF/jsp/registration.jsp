@@ -35,8 +35,8 @@
    			<p>Email</p>
    			<input type="email" name="email" placeholder="Enter your email"><br><br>
    			
-   			<c:if test="${not (requestScope.invalidRegistrationData eq null)}">
-				<c:forEach var="registrationData" items="${requestScope.invalidRegistrationData}">
+   			<c:if test="${not (sessionScope.invalidRegistrationData eq null)}">
+				<c:forEach var="registrationData" items="${sessionScope.invalidRegistrationData}">
 					<font color="red">
 						<c:out value="${registrationData}"/><br>
 					</font>

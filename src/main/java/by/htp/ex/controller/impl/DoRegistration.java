@@ -30,11 +30,14 @@ public class DoRegistration implements Command {
 
 			if (!userService.registration(user)) {
 				List<String> invalidRegistrationData = userService.getInvalidRegistrationData();
-				request.setAttribute("invalidRegistrationData", invalidRegistrationData);
+
+				request.getSession().setAttribute("invalidRegistrationData", invalidRegistrationData);
 
 			}
-			request.setAttribute("registration_status", true);
-			request.getRequestDispatcher("/WEB-INF/pages/layouts/baseLayout.jsp").forward(request, response);
+			request.getSession().setAttribute("registration_status", true);
+			response.sendRedirect("controller?command=go_to_base_page");
+			// request.getRequestDispatcher("/WEB-INF/pages/layouts/baseLayout.jsp").forward(request,
+			// response);
 		} catch (ServiceException e) {
 			// do something
 		}

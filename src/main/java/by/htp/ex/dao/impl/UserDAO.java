@@ -16,8 +16,8 @@ public class UserDAO implements IUserDAO {
 
 	@Override
 	public boolean logination(String login, String password) throws DaoException {
-		try (java.sql.Connection connection = connectionPool.takeConnection();
-				PreparedStatement stmt = connection.prepareStatement(Constant.SQL_USER_SELECT_BY_LOGIN_PASSWORD)) {
+		try (PreparedStatement stmt = connectionPool.takeConnection()
+				.prepareStatement(Constant.SQL_USER_SELECT_BY_LOGIN_PASSWORD)) {
 			stmt.setString(1, login);
 			stmt.setString(2, password);
 			final ResultSet resultSet = stmt.executeQuery();
@@ -26,6 +26,7 @@ public class UserDAO implements IUserDAO {
 			String accessLevel = resultSet.getString("access");
 
 			return accessLevel.equalsIgnoreCase("admin");
+
 		} catch (SQLException e) {
 			return false;
 		} catch (ConnectionPoolException e1) {
@@ -41,8 +42,7 @@ public class UserDAO implements IUserDAO {
 
 	@Override
 	public boolean registration(User user) throws DaoException {
-		try (java.sql.Connection connection = connectionPool.takeConnection();
-				PreparedStatement stmt = connection.prepareStatement(Constant.SQL_USER_INSERT)) {
+		try (PreparedStatement stmt = connectionPool.takeConnection().prepareStatement(Constant.SQL_USER_INSERT)) {
 			stmt.setString(1, user.getLogin());
 			stmt.setString(2, user.getPassword());
 			stmt.setString(3, user.getEmail());
@@ -51,12 +51,9 @@ public class UserDAO implements IUserDAO {
 			return stmt.execute();
 
 		} catch (SQLException e) {
-
 			return false;
 		} catch (ConnectionPoolException e1) {
-
 			return false;
-
 		}
 	}
 

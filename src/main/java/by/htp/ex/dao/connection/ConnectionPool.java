@@ -24,7 +24,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Executor;
 
 public final class ConnectionPool {
-	private final static ConnectionPool instance = new ConnectionPool();
+	private static ConnectionPool instance;
 
 	private BlockingQueue<Connection> connectionQueue;
 	private BlockingQueue<Connection> givenAwayConQueue;
@@ -57,6 +57,9 @@ public final class ConnectionPool {
 	}
 
 	public static ConnectionPool getInstance() {
+		if (instance == null) {
+			instance = new ConnectionPool();
+		}
 		return instance;
 	}
 
