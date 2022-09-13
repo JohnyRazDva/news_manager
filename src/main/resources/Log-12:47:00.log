@@ -1,0 +1,7 @@
+00:28:21 [http-nio-8080-exec-135] ERROR  - by.htp.ex.service.ServiceException: by.htp.ex.dao.NewsDAOException: com.mysql.cj.jdbc.exceptions.CommunicationsException: The last packet successfully received from the server was 48 632 806 milliseconds ago. The last packet sent successfully to the server was 48 632 806 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+12:58:14 [http-nio-8080-exec-2] ERROR  - by.htp.ex.service.ServiceException: by.htp.ex.dao.NewsDAOException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 1 308 326 milliseconds ago. The last packet sent successfully to the server was 1 308 327 milliseconds ago.
+12:47:00 [http-nio-8080-exec-51] ERROR  - by.htp.ex.service.ServiceException: by.htp.ex.dao.DaoException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 1 505 298 milliseconds ago. The last packet sent successfully to the server was 1 505 299 milliseconds ago.

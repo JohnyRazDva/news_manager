@@ -1,0 +1,9 @@
+12:47:00 [http-nio-8080-exec-52] ERROR  - by.htp.ex.service.ServiceException: by.htp.ex.dao.NewsDAOException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 1 505 366 milliseconds ago. The last packet sent successfully to the server was 1 505 366 milliseconds ago.
+12:47:05 [http-nio-8080-exec-53] ERROR  - by.htp.ex.service.ServiceException: by.htp.ex.dao.DaoException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 1 510 094 milliseconds ago. The last packet sent successfully to the server was 1 510 094 milliseconds ago.
+12:47:05 [http-nio-8080-exec-54] ERROR  - by.htp.ex.service.ServiceException: by.htp.ex.dao.NewsDAOException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 1 510 099 milliseconds ago. The last packet sent successfully to the server was 1 510 099 milliseconds ago.

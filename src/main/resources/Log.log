@@ -1,0 +1,4 @@
+12:47:10 [http-nio-8080-exec-55] ERROR  - by.htp.ex.service.ServiceException: by.htp.ex.dao.NewsDAOException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 1 512 507 milliseconds ago. The last packet sent successfully to the server was 1 512 507 milliseconds ago.
+12:47:32 [http-nio-8080-exec-56] ERROR  - by.htp.ex.service.ServiceException: by.htp.ex.dao.DaoException: by.htp.ex.dao.connection.ConnectionPoolException: Error connecting to the data source.

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+	<Properties>
+		<Property name="filename">/Users/joozy/Downloads/web-project-14 3/src/main/resources</Property>
+	</Properties>
+
+	<Appenders>
+		<RollingFile name="file" fileName="${filename}/Log.log"
+			filePattern="${filename}/Log-%d{HH:mm:ss}.log">
+			<PatternLayout>
+				<pattern>%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</pattern>
+			</PatternLayout>
+			<SizeBasedTriggeringPolicy size="1 KB" />
+		</RollingFile>
+
+	</Appenders>
+	
+	<Loggers>
+		<Logger name="logger" level="WARN" additivity="false">
+			<AppenderRef ref="file"/>
+		</Logger>
+		<Root level="ERROR">
+		<AppenderRef ref="file"/>
+		</Root>
+	</Loggers>
+
+
+</Configuration>
