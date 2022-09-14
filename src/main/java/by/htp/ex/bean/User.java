@@ -1,10 +1,14 @@
 package by.htp.ex.bean;
 
+import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Objects;
 
-public class User {
+public class User implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	private String login;
 	private String password;
 	private String confirmPassword;
