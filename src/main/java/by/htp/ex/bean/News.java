@@ -2,6 +2,7 @@ package by.htp.ex.bean;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class News implements Serializable {
 
@@ -72,6 +73,25 @@ public class News implements Serializable {
 
 	public void setNewsDate(LocalDate newsDate) {
 		this.newsDate = newsDate;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(briefNews, content, idNews, newsDate, title);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		News other = (News) obj;
+		return Objects.equals(briefNews, other.briefNews) && Objects.equals(content, other.content)
+				&& Objects.equals(idNews, other.idNews) && Objects.equals(newsDate, other.newsDate)
+				&& Objects.equals(title, other.title);
 	}
 
 }

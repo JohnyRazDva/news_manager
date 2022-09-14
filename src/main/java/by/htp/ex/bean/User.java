@@ -2,6 +2,7 @@ package by.htp.ex.bean;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
+import java.util.Objects;
 
 public class User {
 	private String login;
@@ -57,6 +58,25 @@ public class User {
 
 	private void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = encodingPassword(confirmPassword);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(access, confirmPassword, email, login, password);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return access == other.access && Objects.equals(confirmPassword, other.confirmPassword)
+				&& Objects.equals(email, other.email) && Objects.equals(login, other.login)
+				&& Objects.equals(password, other.password);
 	}
 
 }
